@@ -111,7 +111,7 @@ const animateTrain = async (time) => {
  */
 const main = async () => {
     const position = await getPosition();
-    station = await getStation(position);
+    station = await getStation(position) ?? station;
 
     setStationValue(station);
 

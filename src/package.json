@@ -1,0 +1,22 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "Npm is only used for testing (./testing)",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx jest testing"
+  },
+  "keywords": [
+    "Jest"
+  ],
+  "author": "Léontine Tschannen",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "jsdom": "^26.1.0",
+    "path": "^0.12.7"
+  }
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script>
+    /*
+    Globale Variablen, welche alle einstellbar sind von hier/von dem Einstellungen-Menü
+    */
+    const BASE_URL = "https://transport.opendata.ch/v1/";
+    const INTERVAL = 30_000;
+    const INTERVAL_TITLE = 30_000;
+    const LIMIT = 3
+
+    let station = "Horgen";
+
+    let title = "Abfahrtsbildschirm " + station;
+    let info = "Keine besonderen Hinweise";
+
+    let break_async = false;
+  </script>
+
+  <script src="./javascript/geoposition.js"></script>
+
+  <script src="./javascript/index.js" defer></script>
+  <script src="./javascript/filter.js"></script>
+  <script src="./javascript/request.js"></script>
+  <script src="./javascript/visualize.js"></script>
+
+  <script src="./javascript/settings.js" defer></script>
+  <script src="./javascript/burger.js" defer></script>
+  <script src="./javascript/scroll.js"></script>
+
+  <script src="./javascript/sbb-Uhr-1.3.js"></script>
+  <script src="./javascript/clock.js" defer></script>
+  <script src="./javascript/checkUserInput.js" defer></script>
+
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/basic.css">
+  <link rel="stylesheet" href="styles/connection.css">
+
+  <title>SBB-Abfahrtsbildschirm</title>
+</head>
+
+<body>
+  <header>
+    <div id="header-content-holder">
+      <img id="header-train" src="./images/zug.png" alt="train">
+      <h1 id="header-content-h1"></h1>
+    </div>
+
+    <div id="header-clock"></div>
+
+    <div id="menu-toggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <dialog id="settings" role="dialog" aria-labelledby="settings-title">
+      <h1>Einstellungen</h1>
+      <p><b>Wichtig: </b>Änderungen werden erst beim nächsten Interval angezeigt!</p>
+      <table>
+        <tr>
+          <td>Bahnhof</td>
+          <td><input type="text" id="station-input"></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: center;">
+            <button id="save" onclick="save()">Speichern</button>
+            <button id="close" onclick="closeModal()">Schliessen</button>
+          </td>
+        </tr>
+      </table>
+
+      <div id="messages"></div>
+    </dialog>
+
+    <div id="loading-screen">
+      <img src="./images/gif/loader.gif" alt="loading">
+    </div>
+  </header>
+
+  <main id="connections">
+    <div class="connection">
+      <section class="connection-top">
+
+      </section>
+    </div>
+
+    <div class="connection">
+
+    </div>
+
+    <div class="connection">
+
+    </div>
+  </main>
+</body>
+
+</html>
